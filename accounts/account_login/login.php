@@ -15,7 +15,9 @@ function login()
         echo "<script type='text/javascript'>alert('No password submitted!')</script>";
     else {
         $password = hash("SHA1", $_POST['password']);
-        $stmt = $pdo->prepare('SELECT login, password FROM user WHERE login="' . $_POST['login'] . '" AND password="' . $password . '"');
+        $stmt = $pdo->prepare('SELECT login, password FROM user WHERE login = ? AND password = ?');
+        $stmt->bindParam(1, $_POST['login'], PDO::PARAM_STR);
+        $stmt->bindParam(2, $password, PDO::PARAM_STR);
         $stmt->execute();
         if ($stmt->fetch() == FALSE){
             echo "<script type='text/javascript'>alert('Login details incorrect!')</script>";
