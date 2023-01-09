@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PhonesIreland - 
     <?php
-			if (isset($_GET['cat'])) echo $_GET['cat'];
+			if (isset($_GET['cat'])) echo htmlspecialchars($_GET['cat']);
 			else echo "Home"; 
 	?>	
     </title>
