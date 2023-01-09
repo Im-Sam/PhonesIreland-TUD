@@ -16,7 +16,10 @@ function login()
     else {
         $password = hash("SHA1", $_POST['password']);
         $stmt = $pdo->prepare('SELECT login, password FROM user WHERE login = ? AND password = ?');
-        $stmt->bindParam(1, $_POST['login'], PDO::PARAM_STR);
+        //sanitise the data
+        $login = htmlspecialchars($_POST['login']);
+        //bind the parameters
+        $stmt->bindParam(1, $login, PDO::PARAM_STR);
         $stmt->bindParam(2, $password, PDO::PARAM_STR);
         $stmt->execute();
         if ($stmt->fetch() == FALSE){
