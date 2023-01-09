@@ -1,0 +1,48 @@
+html {
+    position: relative;
+    min-height: 100%;
+    padding-bottom:160px;
+  }
+  body {
+    margin-bottom: 70px;
+  }
+
+.installbutton{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.search-input{
+    height: 100px;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #e9ecef;
+    border-top: 2px solid #d1d4d7;
+}
+
+/*
+#footer {
+    position:relative;
+    bottom:0px;
+    width:100%;
+    height:70px; 
+    color: white;
+    border-top: 3px solid #e9ecef;
+ }
+*/
